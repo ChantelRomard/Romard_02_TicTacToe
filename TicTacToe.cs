@@ -41,9 +41,10 @@ namespace TicTacToe
             // When the form is loaded, assign the Buttons to the array.
             squares = new Button[,]
             {
-                {buttonRow0Column0, buttonRow0Column1, buttonRow0Column2 },
-                {buttonRow1Column0, buttonRow1Column1, buttonRow1Column2 },
-                {buttonRow2Column0, buttonRow2Column1, buttonRow2Column2 }
+                {buttonRow0Column0, buttonRow0Column1, buttonRow0Column2, buttonRow0Column3 },
+                {buttonRow1Column0, buttonRow1Column1, buttonRow1Column2, buttonRow1Column3 },
+                {buttonRow2Column0, buttonRow2Column1, buttonRow2Column2, buttonRow2Column3 },
+                {buttonRow3Column0, buttonRow3Column1, buttonRow3Column2, buttonRow3Column3 }
 
             };
         }
@@ -177,31 +178,50 @@ namespace TicTacToe
         // have the same value - doesn't even matter what the value is
         // as long as it's the same!
         
-            for (int rowCount = 0; rowCount < squares.GetUpperBound(0); rowCount++)
+            for (int rowCount = 0; rowCount <= squares.GetUpperBound(0); rowCount++)
             {
                 // What does "GetUpperBound(0)" mean above?
 
                 // Something to do with squares(rowCount,0), squares(rowCount,1), etc.
                 // How can we analyze the rows to figure out if someone wins?
-                // When someone wins, set isWinner = true;.
-            }
 
-            // Next, check all columns. This will be done pretty much the same way as the rows.
-            
-            // Finally, we have to check the two diagonals.
-            // It is not going to save us any work to use loops
-            // so let's just do it like this:
-            if (squares[0, 0].Text != String.Empty &&
-                squares[0, 0].Text == squares[1, 1].Text &&
-                squares[0, 0].Text == squares[2, 2].Text)
-            {
-                isWinner = true;
-            }
-            else if(squares[0, 2].Text != String.Empty &&
-                squares[0, 2].Text == squares[1, 1].Text &&
-                squares[0, 2].Text == squares[2, 0].Text)
-            {
-                isWinner = true;
+                // Check all the rows.
+                if (squares[rowCount, 0].Text != String.Empty && 
+                    squares[rowCount, 0].Text == squares[rowCount, 1].Text && 
+                    squares[rowCount, 0].Text == squares[rowCount, 2].Text &&
+                    squares[rowCount, 0].Text == squares[rowCount, 3].Text)
+                {
+                    // When someone wins, set isWinner = true;.
+                    isWinner = true;
+                }
+
+                // Next, check all columns. This will be done pretty much the same way as the rows.
+                else if(squares[0, rowCount].Text != String.Empty &&
+                        squares[0, rowCount].Text == squares[1, rowCount].Text &&
+                        squares[0, rowCount].Text == squares[2, rowCount].Text &&
+                        squares[0, rowCount].Text == squares[3, rowCount].Text)
+                {
+                    // When someone wins, set isWinner = true;.
+                    isWinner = true;
+                }
+
+                // Finally, we have to check the two diagonals.
+                else if(squares[0, 0].Text != String.Empty &&
+                        squares[0, 0].Text == squares[1, 1].Text &&
+                        squares[0, 0].Text == squares[2, 2].Text &&
+                        squares[0, 0].Text == squares[3, 3].Text)
+                {
+                    // When someone wins, set isWinner = true;.
+                    isWinner = true;
+                }
+                else if(squares[0, 3].Text != String.Empty &&
+                        squares[0, 3].Text == squares[1, 2].Text &&
+                        squares[0, 3].Text == squares[2, 1].Text &&
+                        squares[0, 3].Text == squares[3, 0].Text)
+                {
+                    // When someone wins, set isWinner = true;.
+                    isWinner = true;
+                }
             }
 
             // **************************************************
@@ -217,11 +237,15 @@ namespace TicTacToe
             // 2) If you want to get even fancier...
             // Make this generate a relevant message when the game is a draw/tie game! (cat game?)
 
-            // 3) If you want to get *super* fancy...
-            // Could you make a 4x4 board? Or a 5x5 board?
+            /*  DONE THIS: 
+             *  3) If you want to get *super* fancy...
+             *  Could you make a *4x4* board? Or a 5x5 board?
+             */
 
-            // 4) If you like efficiency...
-            // How could you do everything in the EvaluateWin() function within a single loop?
+            /*  DONE THIS?? (technically?... I think?) ¯\_(ツ)_/¯
+             *  4) If you like efficiency...
+             *  How could you do everything in the EvaluateWin() function within a single loop?
+             */
 
             // 5) Holy crap you must want to make your life difficult for yourself if you pick this option:
             // Can you make it so that you can use arrow keys to move between the different squares in a natural way?
@@ -244,6 +268,10 @@ namespace TicTacToe
 
                 // Disable all squares to prevent further play.
                 SetControlsEnabled(squares, false);
+            }
+            else
+            {
+                labelGameStatus.Text = "Cat Game! Meow!";
             }
         }
 
