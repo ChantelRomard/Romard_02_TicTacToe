@@ -40,11 +40,18 @@ namespace TicTacToe
             this.buttonRow2Column1 = new System.Windows.Forms.Button();
             this.buttonRow2Column2 = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.buttonRow0Column3 = new System.Windows.Forms.Button();
+            this.buttonRow1Column3 = new System.Windows.Forms.Button();
+            this.buttonRow2Column3 = new System.Windows.Forms.Button();
+            this.buttonRow3Column0 = new System.Windows.Forms.Button();
+            this.buttonRow3Column1 = new System.Windows.Forms.Button();
+            this.buttonRow3Column2 = new System.Windows.Forms.Button();
+            this.buttonRow3Column3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelGameStatus
             // 
-            this.labelGameStatus.Location = new System.Drawing.Point(14, 24);
+            this.labelGameStatus.Location = new System.Drawing.Point(44, 24);
             this.labelGameStatus.Name = "labelGameStatus";
             this.labelGameStatus.Size = new System.Drawing.Size(164, 23);
             this.labelGameStatus.TabIndex = 0;
@@ -134,7 +141,7 @@ namespace TicTacToe
             // 
             // buttonReset
             // 
-            this.buttonReset.Location = new System.Drawing.Point(14, 228);
+            this.buttonReset.Location = new System.Drawing.Point(44, 274);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(164, 28);
             this.buttonReset.TabIndex = 10;
@@ -142,13 +149,83 @@ namespace TicTacToe
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.ButtonResetClick);
             // 
+            // buttonRow0Column3
+            // 
+            this.buttonRow0Column3.Location = new System.Drawing.Point(184, 50);
+            this.buttonRow0Column3.Name = "buttonRow0Column3";
+            this.buttonRow0Column3.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow0Column3.TabIndex = 11;
+            this.buttonRow0Column3.UseVisualStyleBackColor = true;
+            this.buttonRow0Column3.Click += new System.EventHandler(this.TicTacToeSquareClick);
+            // 
+            // buttonRow1Column3
+            // 
+            this.buttonRow1Column3.Location = new System.Drawing.Point(184, 106);
+            this.buttonRow1Column3.Name = "buttonRow1Column3";
+            this.buttonRow1Column3.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow1Column3.TabIndex = 12;
+            this.buttonRow1Column3.UseVisualStyleBackColor = true;
+            this.buttonRow1Column3.Click += new System.EventHandler(this.TicTacToeSquareClick);
+            // 
+            // buttonRow2Column3
+            // 
+            this.buttonRow2Column3.Location = new System.Drawing.Point(184, 162);
+            this.buttonRow2Column3.Name = "buttonRow2Column3";
+            this.buttonRow2Column3.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow2Column3.TabIndex = 13;
+            this.buttonRow2Column3.UseVisualStyleBackColor = true;
+            this.buttonRow2Column3.Click += new System.EventHandler(this.TicTacToeSquareClick);
+            // 
+            // buttonRow3Column0
+            // 
+            this.buttonRow3Column0.Location = new System.Drawing.Point(14, 218);
+            this.buttonRow3Column0.Name = "buttonRow3Column0";
+            this.buttonRow3Column0.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow3Column0.TabIndex = 14;
+            this.buttonRow3Column0.UseVisualStyleBackColor = true;
+            this.buttonRow3Column0.Click += new System.EventHandler(this.TicTacToeSquareClick);
+            // 
+            // buttonRow3Column1
+            // 
+            this.buttonRow3Column1.Location = new System.Drawing.Point(72, 218);
+            this.buttonRow3Column1.Name = "buttonRow3Column1";
+            this.buttonRow3Column1.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow3Column1.TabIndex = 15;
+            this.buttonRow3Column1.UseVisualStyleBackColor = true;
+            this.buttonRow3Column1.Click += new System.EventHandler(this.TicTacToeSquareClick);
+            // 
+            // buttonRow3Column2
+            // 
+            this.buttonRow3Column2.Location = new System.Drawing.Point(128, 218);
+            this.buttonRow3Column2.Name = "buttonRow3Column2";
+            this.buttonRow3Column2.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow3Column2.TabIndex = 16;
+            this.buttonRow3Column2.UseVisualStyleBackColor = true;
+            this.buttonRow3Column2.Click += new System.EventHandler(this.TicTacToeSquareClick);
+            // 
+            // buttonRow3Column3
+            // 
+            this.buttonRow3Column3.Location = new System.Drawing.Point(184, 218);
+            this.buttonRow3Column3.Name = "buttonRow3Column3";
+            this.buttonRow3Column3.Size = new System.Drawing.Size(50, 50);
+            this.buttonRow3Column3.TabIndex = 17;
+            this.buttonRow3Column3.UseVisualStyleBackColor = true;
+            this.buttonRow3Column3.Click += new System.EventHandler(this.TicTacToeSquareClick);
+            // 
             // formTicTacToe
             // 
             this.AcceptButton = this.buttonRow1Column1;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonReset;
-            this.ClientSize = new System.Drawing.Size(192, 283);
+            this.ClientSize = new System.Drawing.Size(251, 317);
+            this.Controls.Add(this.buttonRow3Column3);
+            this.Controls.Add(this.buttonRow3Column2);
+            this.Controls.Add(this.buttonRow3Column1);
+            this.Controls.Add(this.buttonRow3Column0);
+            this.Controls.Add(this.buttonRow2Column3);
+            this.Controls.Add(this.buttonRow1Column3);
+            this.Controls.Add(this.buttonRow0Column3);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonRow2Column2);
             this.Controls.Add(this.buttonRow2Column1);
@@ -182,6 +259,13 @@ namespace TicTacToe
         private System.Windows.Forms.Button buttonRow2Column1;
         private System.Windows.Forms.Button buttonRow2Column2;
         private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.Button buttonRow0Column3;
+        private System.Windows.Forms.Button buttonRow1Column3;
+        private System.Windows.Forms.Button buttonRow2Column3;
+        private System.Windows.Forms.Button buttonRow3Column0;
+        private System.Windows.Forms.Button buttonRow3Column1;
+        private System.Windows.Forms.Button buttonRow3Column2;
+        private System.Windows.Forms.Button buttonRow3Column3;
     }
 }
 
